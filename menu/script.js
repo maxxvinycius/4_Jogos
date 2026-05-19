@@ -7,7 +7,7 @@ const botoes = document.querySelectorAll("#card button");
 botoes[0].addEventListener("click", () => {
 
   window.location.href =
-    "../Jogo da Memória/index.html";
+    "./Jogo da Memória/index.html";
 
 });
 
@@ -18,7 +18,7 @@ botoes[0].addEventListener("click", () => {
 botoes[1].addEventListener("click", () => {
 
   window.location.href =
-    "../Jogo da Velha/index.html";
+    "./Jogo da Velha/index.html";
 
 });
 
@@ -29,7 +29,7 @@ botoes[1].addEventListener("click", () => {
 botoes[2].addEventListener("click", () => {
 
   window.location.href =
-    "../Jogo da Adivinhação/index.html";
+    "./Jogo da Adivinhação/index.html";
 
 });
 
@@ -40,6 +40,6 @@ botoes[2].addEventListener("click", () => {
 botoes[3].addEventListener("click", () => {
 
   window.location.href =
-    "../Pedra, Papel, tesoura/index.html";
+    "./Pedra, Papel, tesoura/index.html";
 
 });
