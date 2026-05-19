@@ -1,12 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
   min-height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 20px;
 
   font-family: 'Press Start 2P', cursive;
 
@@ -19,25 +31,38 @@ body {
   );
 
   color: white;
+
+  overflow-x: hidden;
 }
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
 
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
 
   text-align: center;
 
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
 
-  padding: 30px;
+  padding: 35px 25px;
 
   border-radius: 20px;
 
   border: 4px solid rgb(0, 0, 0);
 
-  box-shadow: 0 0 20px rgb(255, 18, 18);
+  box-shadow:
+    0 0 20px rgb(255, 18, 18);
 }
+
+
+/* =========================
+   TÍTULO
+========================= */
 
 h1 {
 
@@ -45,10 +70,19 @@ h1 {
 
   margin-bottom: 40px;
 
+  font-size: clamp(20px, 4vw, 36px);
+
+  line-height: 1.5;
+
   text-shadow:
     3px 3px 0 #000,
     5px 5px 0 #555;
 }
+
+
+/* =========================
+   RANKING
+========================= */
 
 .ranking {
 
@@ -58,33 +92,46 @@ h1 {
 
   flex-wrap: wrap;
 
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .placar {
 
   background: rgba(255,255,255,0.1);
 
-  padding: 15px;
+  padding: 15px 20px;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
   border: 2px solid rgb(0, 0, 0);
 
   font-size: 12px;
 
+  line-height: 1.6;
+
   color: #ffe600;
 }
+
+
+/* =========================
+   ARENA
+========================= */
 
 .arena {
 
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+
   flex-wrap: wrap;
 
-  gap: 30px;
+  gap: 40px;
 }
+
+
+/* =========================
+   PLAYERS
+========================= */
 
 .player {
 
@@ -96,6 +143,9 @@ h1 {
 .player h2 {
 
   font-size: 14px;
+
+  line-height: 1.6;
+
   color: rgb(255, 0, 0);
 }
 
@@ -108,8 +158,14 @@ h1 {
 
   margin: 20px 0;
 
-  animation: idle 2s infinite ease-in-out;
+  animation:
+    idle 2s infinite ease-in-out;
 }
+
+
+/* =========================
+   ANIMAÇÃO IDLE
+========================= */
 
 @keyframes idle {
 
@@ -126,10 +182,15 @@ h1 {
   }
 }
 
+
+/* =========================
+   BOTÕES ESCOLHA
+========================= */
+
 .botoes {
 
   display: flex;
-  gap: 10px;
+  gap: 12px;
 
   flex-wrap: wrap;
 
@@ -138,8 +199,8 @@ h1 {
 
 button {
 
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
 
   border: none;
 
@@ -160,8 +221,14 @@ button:hover {
 
   transform: scale(1.1);
 
-  box-shadow: 0 0 15px rgb(255, 81, 0);
+  box-shadow:
+    0 0 15px rgb(255, 81, 0);
 }
+
+
+/* =========================
+   VS
+========================= */
 
 .vs {
 
@@ -173,18 +240,31 @@ button:hover {
     2px 2px 0 black;
 }
 
+
+/* =========================
+   RESULTADO
+========================= */
+
 #resultado {
 
   margin-top: 40px;
 
   font-size: 18px;
 
+  line-height: 1.8;
+
   color: #ffe600;
 }
 
+
+/* =========================
+   SHAKE
+========================= */
+
 .animar {
 
-  animation: shake 0.5s infinite;
+  animation:
+    shake 0.5s infinite;
 }
 
 @keyframes shake {
@@ -210,9 +290,14 @@ button:hover {
   }
 }
 
+
+/* =========================
+   AÇÕES
+========================= */
+
 .acoes {
 
-  margin-top: 30px;
+  margin-top: 35px;
 
   display: flex;
 
@@ -226,7 +311,7 @@ button:hover {
 .reinicio,
 .proxima {
 
-  padding: 15px 30px;
+  padding: 15px 25px;
 
   border: none;
 
@@ -254,33 +339,166 @@ button:hover {
 
 .proxima {
 
-  background: #009dff;
+  background: #ffd900;
 }
 
-@media (max-width: 700px) {
 
-  .arena {
-    flex-direction: column;
+/* =========================
+   RESPONSIVO TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 15px;
   }
 
-  .player img {
+  .container {
 
-    width: 130px;
-    height: 130px;
+    padding: 30px 15px;
+  }
+
+  .arena {
+
+    flex-direction: column;
+
+    gap: 25px;
   }
 
   h1 {
 
-    font-size: 20px;
+    font-size: 22px;
+
+    line-height: 1.7;
   }
 
-  #resultado {
+  .player h2 {
 
-    font-size: 14px;
+    font-size: 11px;
+  }
+
+  .player img {
+
+    width: 140px;
+    height: 140px;
   }
 
   .placar {
 
     font-size: 10px;
+
+    padding: 12px;
+  }
+
+  .vs {
+
+    font-size: 28px;
+  }
+
+  #resultado {
+
+    font-size: 13px;
+
+    line-height: 2;
+  }
+
+  button {
+
+    width: 65px;
+    height: 65px;
+
+    font-size: 24px;
+  }
+
+  .reinicio,
+  .proxima {
+
+    width: 90%;
+
+    max-width: 300px;
+
+    font-size: 9px;
+  }
+}
+
+
+/* =========================
+   RESPONSIVO CELULAR
+========================= */
+
+@media (max-width: 480px) {
+
+  .container {
+
+    padding: 25px 10px;
+
+    border-radius: 15px;
+  }
+
+  h1 {
+
+    font-size: 16px;
+
+    margin-bottom: 30px;
+  }
+
+  .ranking {
+
+    gap: 12px;
+  }
+
+  .placar {
+
+    width: 100%;
+
+    font-size: 8px;
+
+    line-height: 1.8;
+  }
+
+  .player h2 {
+
+    font-size: 9px;
+  }
+
+  .player img {
+
+    width: 110px;
+    height: 110px;
+  }
+
+  .botoes {
+
+    gap: 8px;
+  }
+
+  button {
+
+    width: 55px;
+    height: 55px;
+
+    font-size: 20px;
+  }
+
+  .vs {
+
+    font-size: 22px;
+  }
+
+  #resultado {
+
+    font-size: 10px;
+
+    line-height: 2;
+  }
+
+  .reinicio,
+  .proxima {
+
+    width: 100%;
+
+    font-size: 8px;
+
+    padding: 14px 10px;
   }
 }
